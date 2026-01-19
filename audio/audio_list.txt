@@ -1,9 +1,15 @@
 ﻿audio\audio_list.txt
+audio\BGM\JohnCena出場.mp3
+audio\BGM\TopGun.mp3
+audio\BGM\喬峰出場.mp3
+audio\BGM\海賊王-振奮.mp3
+audio\BGM\百戰天龍-馬蓋仙.mp3
 audio\綜藝音效\可惜.WAV
 audio\綜藝音效\咚.WAV
 audio\綜藝音效\咚咚.WAV
 audio\綜藝音效\啵.WAV
 audio\綜藝音效\完蛋了.WAV
+audio\綜藝音效\小叮噹拿道具.mp3
 audio\綜藝音效\掌聲.WAV
 audio\綜藝音效\揍人.WAV
 audio\綜藝音效\歡呼聲.WAV
