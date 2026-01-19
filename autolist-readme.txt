@@ -11,3 +11,8 @@ Out-File audio/audio_list.txt -Encoding utf8
 產生會在audio資料夾內產生audio_list.txt
 
 4.上git push上GitHub 上執行CI/CD
+
+git add .
+git commit -m "add audio 20260119"
+git branch -M main
+git push
