@@ -1,0 +1,25 @@
+﻿audio\audio_list.txt
+audio\綜藝音效\可惜.WAV
+audio\綜藝音效\咚.WAV
+audio\綜藝音效\咚咚.WAV
+audio\綜藝音效\啵.WAV
+audio\綜藝音效\完蛋了.WAV
+audio\綜藝音效\掌聲.WAV
+audio\綜藝音效\揍人.WAV
+audio\綜藝音效\歡呼聲.WAV
+audio\綜藝音效\消音.WAV
+audio\綜藝音效\福斯電影開頭.WAV
+audio\綜藝音效\答對了.WAV
+audio\綜藝音效\答錯了.WAV
+audio\綜藝音效\緊張.WAV
+audio\綜藝音效\跳躍.WAV
+audio\綜藝音效\金馬頒獎音樂.WAV
+audio\綜藝音效\鑼.WAV
+audio\綜藝音效\難過.WAV
+audio\迷因-回答我\Looking My Eyes.WAV
+audio\迷因-回答我\Tell Me Why Baby.WAV
+audio\迷因-回答我\回答我.WAV
+audio\迷因-回答我\我再問你啊.WAV
+audio\迷因-回答我\能 能 能.WAV
+audio\迷因-回答我\說話.WAV
+audio\迷因-回答我\阿.WAV

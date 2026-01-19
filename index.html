@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>BGM-HUB · 音效播放板</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="app-header-inner">
+        <div class="brand-badge">BGM</div>
+        <div class="title-group">
+          <h1 class="app-title">BGM-HUB</h1>
+          <p class="app-subtitle">音效一鍵播放 · 自訂排序</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <section class="view">
+        <header class="view-header">
+          <h2 class="section-title">音效分頁</h2>
+          <p class="section-desc">
+            上方像活頁夾的分頁會依據 audio 子資料夾自動產生，下面的卡片可以拖曳調整順序。
+          </p>
+        </header>
+
+        <!-- 活頁夾分頁列 -->
+        <div id="tabBar" class="tab-bar">
+          <!-- 由 app.js 動態產生 -->
+        </div>
+
+        <!-- 工具列（全部靜音） -->
+        <div class="toolbar">
+          <button id="stopAllBtn" class="stop-all-btn">全部靜音</button>
+        </div>
+
+        <!-- 音效卡片區 -->
+        <div id="padGrid" class="pad-grid">
+          <!-- 由 app.js 動態產生 -->
+        </div>
+
+        <p class="hint-text">
+          💡 提示：請先在專案根目錄執行產生音檔清單的指令，然後重新整理本頁。卡片排序會記在這台裝置裡。
+        </p>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <span>© 2026 BGM-HUB · 音效播放板</span>
+    </footer>
+  </div>
+
+  <!-- 不再需要 audiodb.js -->
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,458 @@
+/* =========================
+   全域：俏皮便利貼風格
+   ========================= */
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: clamp(14px, 3.2vw, 16px);
+}
+
+body {
+  margin: 0;
+  font-family:
+    "Noto Sans TC",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang TC",
+    "Microsoft JhengHei",
+    sans-serif;
+  background: radial-gradient(circle at top left, #fffae6 0%, #ffeaf3 40%, #e6f3ff 100%);
+  color: #2c2430;
+  line-height: 1.6;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   Header：彩色便利貼 + Logo
+   ========================= */
+
+.app-header {
+  padding: 10px 16px 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  background: linear-gradient(90deg, #ffcfdf 0%, #fefdca 50%, #e0c3fc 100%);
+}
+
+.app-header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  background: radial-gradient(circle at 30% 20%, #fff9c4, #ffb3c6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+  color: #5b2140;
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.14),
+    0 0 0 1px rgba(255, 255, 255, 0.8);
+}
+
+.title-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.app-title {
+  margin: 0;
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #3b1740;
+}
+
+.app-subtitle {
+  margin: 0;
+  font-size: clamp(0.8rem, 2.4vw, 0.95rem);
+  color: #5f3459;
+}
+
+/* =========================
+   Main & View 容器
+   ========================= */
+
+.app-main {
+  flex: 1;
+  width: min(960px, 100% - 24px);
+  margin: 16px auto 18px;
+}
+
+.view {
+  border-radius: 20px;
+  background: #fffdf8;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: clamp(12px, 3vw, 18px);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.9);
+}
+
+.view-header {
+  margin-bottom: 4px;
+}
+
+.section-title {
+  margin: 0 0 4px;
+  font-size: clamp(1.05rem, 3vw, 1.25rem);
+  font-weight: 700;
+  color: #3a2738;
+  letter-spacing: 0.08em;
+}
+
+.section-desc {
+  margin: 0 0 10px;
+  font-size: 0.85rem;
+  color: #695364;
+}
+
+.hint-text {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #7a6576;
+}
+
+/* =========================
+   Tab Bar：活頁夾見出紙
+   ========================= */
+
+.tab-bar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 6px 4px 4px;
+  margin: 4px -4px 12px;
+}
+
+.tab {
+  position: relative;
+  padding: 6px 12px 8px;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: none;
+  background: #ffeef7;
+  font-size: 0.8rem;
+  color: #6b355b;
+  cursor: pointer;
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.9);
+  transform-origin: bottom;
+  transform: translateY(2px);
+  transition:
+    background 0.15s ease,
+    box-shadow 0.15s ease,
+    color 0.15s ease,
+    transform 0.12s ease;
+  white-space: nowrap;
+}
+
+.tab::before {
+  content: "";
+  position: absolute;
+  inset: 3px 3px auto 3px;
+  border-radius: 8px 8px 0 0;
+  border: 1px dashed rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+}
+
+.tab:hover {
+  background: #ffe1f0;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.14),
+    0 1px 0 rgba(255, 255, 255, 0.9);
+  transform: translateY(0);
+}
+
+.tab.is-active {
+  background: #ffffff;
+  color: #3b1740;
+  z-index: 2;
+  transform: translateY(0);
+}
+
+/* 底下那條像活頁夾的線 */
+.tab-bar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   上方工具列（全部靜音）
+   ========================= */
+
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin: 6px 0 10px;
+}
+
+.stop-all-btn {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, #ffe082, #ffca28);
+  color: #5a3a18;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.12s ease,
+    transform 0.08s ease;
+}
+
+.stop-all-btn:hover {
+  background: linear-gradient(135deg, #ffecb3, #ffd54f);
+  border-color: rgba(0, 0, 0, 0.18);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+  transform: translateY(-1px);
+}
+
+.stop-all-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* =========================
+   Grid：音效卡片
+   ========================= */
+
+.pad-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (min-width: 768px) {
+  .pad-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .pad-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.pad-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: grab;
+}
+
+.pad-item:active {
+  cursor: grabbing;
+}
+
+.pad-item.dragging {
+  opacity: 0.8;
+  transform: scale(0.97);
+}
+
+/* =========================
+   播放按鍵（大卡片）
+   ========================= */
+
+.audio-pad {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90px;
+  padding: 12px 10px;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: radial-gradient(circle at 20% 0%, #ffffff 0%, #fff3f0 40%, #ffe4fa 100%);
+  color: #351b3a;
+  text-align: center;
+  overflow: hidden;
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease,
+    background 0.15s ease,
+    filter 0.15s ease;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.audio-pad::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  pointer-events: none;
+}
+
+.audio-pad::after {
+  /* 右下角一小塊折角貼紙感 */
+  content: "";
+  position: absolute;
+  right: -8px;
+  bottom: -8px;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle at 0 0, #ffe082, #ffca28);
+  transform: rotate(-20deg);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.audio-pad {
+  box-shadow:
+    0 6px 14px rgba(0, 0, 0, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .audio-pad:hover {
+    transform: translateY(-2px) rotate(-0.4deg);
+    border-color: rgba(0, 0, 0, 0.12);
+    background: radial-gradient(circle at 20% 0%, #ffffff 0%, #fff7e6 40%, #ffd7f5 100%);
+    box-shadow:
+      0 10px 22px rgba(0, 0, 0, 0.16),
+      0 0 0 1px rgba(255, 255, 255, 0.9);
+  }
+}
+
+.audio-pad:active {
+  transform: translateY(1px);
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.18),
+    inset 0 1px 2px rgba(0, 0, 0, 0.08);
+  filter: brightness(0.97);
+}
+
+.audio-pad.is-playing {
+  border-color: #ff8a80;
+  background: radial-gradient(circle at 20% 0%, #ffffff 0%, #ffe5f2 40%, #ffcdd2 100%);
+  filter: brightness(1.05);
+}
+
+/* 名稱文字（只有一行） */
+.audio-pad-label-main {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #2f1633;
+}
+
+/* =========================
+   停止按鍵（小 pill）
+   ========================= */
+
+.audio-pad-stop {
+  width: 100%;
+  min-height: 30px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: #fff7e6;
+  color: #5b3a28;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease,
+    box-shadow 0.12s ease,
+    transform 0.08s ease;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.audio-pad-stop:hover {
+  background: #ffe9c4;
+  border-color: rgba(0, 0, 0, 0.16);
+  color: #4a2f20;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.14);
+}
+
+.audio-pad-stop:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* =========================
+   手機微調
+   ========================= */
+
+@media (max-width: 640px) {
+  .app-main {
+    width: calc(100% - 16px);
+    margin-top: 10px;
+  }
+
+  .view {
+    border-radius: 18px;
+    padding: 12px;
+  }
+
+  .audio-pad {
+    min-height: 86px;
+    padding: 10px 8px;
+  }
+
+  .audio-pad-label-main {
+    font-size: 0.96rem;
+  }
+
+  .audio-pad-stop {
+    min-height: 28px;
+    font-size: 0.78rem;
+  }
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+.app-footer {
+  padding: 8px 16px 14px;
+  text-align: center;
+  font-size: 0.78rem;
+  color: #6f566a;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  background: linear-gradient(90deg, #fbe9e7, #f3e5f5);
+}
